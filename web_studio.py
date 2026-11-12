@@ -29,7 +29,7 @@ from pipeline.image_gen import generate_scene_images
 from pipeline.assembler import assemble_scene_clip, assemble_final_reel
 
 HOST = "0.0.0.0"
-PORT = 8080
+PORT = int(os.getenv("PORT", 8080))
 
 CURRENT_STATUS = {
     "status": "idle",
