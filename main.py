@@ -26,6 +26,11 @@ from pipeline.script_gen import generate_reel_script
 from pipeline.voice_gen import generate_scene_voices
 from pipeline.image_gen import generate_scene_images
 from pipeline.assembler import assemble_scene_clip, assemble_final_reel
+from web_studio import StudioRequestHandler
+
+# Export handler and app for Vercel Serverless Function entrypoint
+handler = StudioRequestHandler
+app = StudioRequestHandler
 
 def run_pipeline(
     topic: str,

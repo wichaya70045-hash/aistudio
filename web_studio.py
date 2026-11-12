@@ -475,5 +475,9 @@ def start_server():
     print("=" * 60)
     server.serve_forever()
 
+# Export for Vercel / Serverless function runtime
+handler = StudioRequestHandler
+app = StudioRequestHandler
+
 if __name__ == "__main__":
     start_server()

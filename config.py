@@ -21,7 +21,11 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY", "")
 
 # Output directories
-OUTPUT_DIR = BASE_DIR / "output"
+if os.getenv("VERCEL"):
+    OUTPUT_DIR = Path("/tmp/output")
+else:
+    OUTPUT_DIR = BASE_DIR / "output"
+
 AUDIO_DIR = OUTPUT_DIR / "audio"
 IMAGES_DIR = OUTPUT_DIR / "images"
 VIDEOS_DIR = OUTPUT_DIR / "videos"
